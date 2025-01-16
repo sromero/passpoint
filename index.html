@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evotech - Custom App & Hardware Development</title>
+    <title>PassPoint - Gestión de eventos y entradas</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
-    <header class="py-3 shadow-sm">
+    <header class="py-3 shadow-sm bg-primary">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand text-white" href="#home">Evotech</a>
+                <a class="navbar-brand text-white" href="#home">PassPoint</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -34,10 +34,10 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero text-center">
+    <section id="home" class="hero text-center py-5 bg-light">
         <div class="container">
-            <h2 class="display-4 fw-bold">Bienvenido a Evotech</h2>
-            <p class="lead">Desarrollamos aplicaciones personalizadas y prototipos de hardware innovadores para nuestros clientes.</p>
+            <h2 class="display-4 fw-bold">Bienvenido a PassPoint</h2>
+            <p class="lead">La solución completa para gestionar tus eventos y accesos.</p>
         </div>
     </section>
 
@@ -46,21 +46,21 @@
         <div class="container text-center">
             <h2 class="mb-4">Nuestros Servicios</h2>
             <div class="row g-4">
-                <!-- Service 1: Desarrollo de Aplicaciones -->
+                <!-- Service 1: Gestión de Accesos -->
                 <div class="col-md-6">
                     <div class="card bg-light">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Desarrollo de Aplicaciones Personalizadas</h5>
-                            <p class="card-text">Creamos aplicaciones web y móviles a medida utilizando tecnologías modernas como React Native con Expo para satisfacer las necesidades únicas de tu negocio.</p>
+                            <h5 class="card-title">Gestión de Accesos</h5>
+                            <p class="card-text">Controla y supervisa los accesos a tus eventos con escaneos rápidos de códigos QR mediante nuestra app nativa.</p>
                         </div>
                     </div>
                 </div>
-                <!-- Service 2: Prototipos de Hardware -->
+                <!-- Service 2: Administración de Eventos -->
                 <div class="col-md-6">
                     <div class="card bg-light">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Desarrollo de Prototipos de Hardware</h5>
-                            <p class="card-text">Diseñamos y construimos prototipos de hardware personalizados para proyectos innovadores, garantizando una solución completa y funcional.</p>
+                            <h5 class="card-title">Administración de Eventos</h5>
+                            <p class="card-text">Gestiona tus eventos, crea entradas y monitorea en tiempo real desde nuestro módulo administrador fácil de usar.</p>
                         </div>
                     </div>
                 </div>
@@ -69,32 +69,31 @@
     </section>
 
     <!-- Contact Us Section -->
-     <section id="contact" class="contact py-5 bg-light">
-            <div class="container text-center">
-                <h2 class="mb-4">Contáctanos</h2>
-                <form id="contactForm" class="text-left mx-auto" style="max-width: 600px;">
-                     <div class="mb-3">
-                        <label for="name" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="name" name="from_name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="email" name="from_email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Mensaje</label>
-                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100" id="submitButton">Enviar Mensaje</button>
-
-                </form>
-            </div>
-        </section>
+    <section id="contact" class="contact py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-4">Contáctanos</h2>
+            <form id="contactForm" class="text-left mx-auto" style="max-width: 600px;">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="from_name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" name="from_email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100" id="submitButton">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="py-3">
+    <footer class="py-3 bg-primary text-white">
         <div class="container text-center">
-            <p>&copy; 2024 Evotech. Todos los derechos reservados.</p>
+            <p>&copy; 2024 PassPoint. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -106,27 +105,20 @@
         emailjs.init('hb8EKPFvRVQ4TVStL');
 
         document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
+            event.preventDefault();
 
             const submitButton = document.getElementById("submitButton");
-            submitButton.textContent = "Enviando...";  // Cambiar el texto del botón
+            submitButton.textContent = "Enviando...";
 
-            // Enviar el correo a través de EmailJS
-            emailjs.sendForm("service_6g5vs5r", "template_7kt1j7z", this)  // "this" es el formulario en sí
+            emailjs.sendForm("service_6g5vs5r", "template_7kt1j7z", this)
                 .then(function(response) {
-                    submitButton.textContent = "Enviar Mensaje";  // Restablecer el texto del botón
-
-                    // Limpiar los campos del formulario
+                    submitButton.textContent = "Enviar Mensaje";
                     document.getElementById('contactForm').reset();
-
-                    // Mostrar mensaje de éxito
                     alert("Mensaje enviado con éxito!");
                 }, function(error) {
-                    submitButton.textContent = "Enviar Mensaje";  // Restablecer el texto del botón
-
-                    // Mostrar mensaje de error
+                    submitButton.textContent = "Enviar Mensaje";
                     alert("Hubo un error al enviar el mensaje. Intenta de nuevo.");
-                    console.log(error); // Muestra el error en la consola para poder depurarlo
+                    console.log(error);
                 });
         });
     </script>
