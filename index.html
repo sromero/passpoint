@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evotech - Custom App & Hardware Development</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="py-3 shadow-sm">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand text-white" href="#home">Evotech</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#home">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#services">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#contact">Contáctanos</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-center">
+        <div class="container">
+            <h2 class="display-4 fw-bold">Bienvenido a Evotech</h2>
+            <p class="lead">Desarrollamos aplicaciones personalizadas y prototipos de hardware innovadores para nuestros clientes.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Nuestros Servicios</h2>
+            <div class="row g-4">
+                <!-- Service 1: Desarrollo de Aplicaciones -->
+                <div class="col-md-6">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Desarrollo de Aplicaciones Personalizadas</h5>
+                            <p class="card-text">Creamos aplicaciones web y móviles a medida utilizando tecnologías modernas como React Native con Expo para satisfacer las necesidades únicas de tu negocio.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 2: Prototipos de Hardware -->
+                <div class="col-md-6">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Desarrollo de Prototipos de Hardware</h5>
+                            <p class="card-text">Diseñamos y construimos prototipos de hardware personalizados para proyectos innovadores, garantizando una solución completa y funcional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+     <section id="contact" class="contact py-5 bg-light">
+            <div class="container text-center">
+                <h2 class="mb-4">Contáctanos</h2>
+                <form id="contactForm" class="text-left mx-auto" style="max-width: 600px;">
+                     <div class="mb-3">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" name="from_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" name="from_email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100" id="submitButton">Enviar Mensaje</button>
+
+                </form>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="py-3">
+        <div class="container text-center">
+            <p>&copy; 2024 Evotech. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript"  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        emailjs.init('hb8EKPFvRVQ4TVStL');
+
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe de la manera tradicional
+
+            const submitButton = document.getElementById("submitButton");
+            submitButton.textContent = "Enviando...";  // Cambiar el texto del botón
+
+            // Enviar el correo a través de EmailJS
+            emailjs.sendForm("service_6g5vs5r", "template_7kt1j7z", this)  // "this" es el formulario en sí
+                .then(function(response) {
+                    submitButton.textContent = "Enviar Mensaje";  // Restablecer el texto del botón
+
+                    // Limpiar los campos del formulario
+                    document.getElementById('contactForm').reset();
+
+                    // Mostrar mensaje de éxito
+                    alert("Mensaje enviado con éxito!");
+                }, function(error) {
+                    submitButton.textContent = "Enviar Mensaje";  // Restablecer el texto del botón
+
+                    // Mostrar mensaje de error
+                    alert("Hubo un error al enviar el mensaje. Intenta de nuevo.");
+                    console.log(error); // Muestra el error en la consola para poder depurarlo
+                });
+        });
+    </script>
+</body>
+</html>
