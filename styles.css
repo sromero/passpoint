@@ -1,0 +1,67 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+}
+header {
+    background: linear-gradient(90deg, #798598, #60096c);
+    color: white;
+}
+.hero {
+    background: url('backImage.jpg') no-repeat center center/cover;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f8f9fa;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.card {
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.btn-primary {
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+    border: none;
+}
+footer {
+    background: linear-gradient(90deg, #798598, #60096c);
+    color: white;
+}
+footer p {
+    margin: 0;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #798598, #60096c);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #798598, #60096c29);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-light .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #f8f9fa;
+}
